@@ -8,7 +8,8 @@ Repositório contendo testes automatizados, que foram implementados com uso do C
 
 A estrutura do projeto está organizada de acordo com as melhores práticas do Cypress:
 
-<img width="259" alt="Screenshot 2024-11-04 at 12 21 39" src="https://github.com/user-attachments/assets/f5125eec-758c-4cf4-8feb-4827954ca1a4">
+![Screenshot 2025-01-23 at 21 42 23](https://github.com/user-attachments/assets/8ccfc0f4-c19d-4159-9719-3ce9ab874439)
+
 
 - e2e - Pasta com os cenários de testes.
 - reports - Pasta contendo os reports gerados após execução dos testes.
@@ -23,15 +24,16 @@ A estrutura do projeto está organizada de acordo com as melhores práticas do C
 
 
 
-## Execução dos testes - Local
+## Execução dos testes - Localmente
 
 - OBS: Antes de executar qualquer um dos comandos abaixo é necessário executar o comando:
     * `npm install`
     
-    Como também criar um novo arquivo na raiz do projeto, chamado "cypress.env.json", contendo o seguinte valor:
-      {
+    Como também criar um novo arquivo na raiz do projeto, chamado  "cypress.env.json", contendo o seguinte valor:
+  
+     `{
         "cpf": "448.029.390-60"
-      }
+     }`
 
 1. Para executar em Modo Interativo
    * `npx cypress open`
@@ -39,6 +41,11 @@ A estrutura do projeto está organizada de acordo com as melhores práticas do C
 2. Para executar em Modo Headless (linha de comando)
   * `npx cypress run`
 
+3. Para executar com Docker.
+   - Possuir Docker instalado na máquina.
+     
+   * `docker build -t cypressproject:1.0 .`
+   * `docker run -i -t cypressproject:1.0 cypress run --spec cypress/e2e/*.cy.js`
 
 ## Execução dos testes e Reports - Github Actions
 
